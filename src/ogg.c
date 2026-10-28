@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <alloca.h>
 #include "mediakit_priv.h"
 // blibc should have this
 static double mk_ldexp(double x, int exp) {
@@ -28,7 +29,7 @@ static void mk_qsort(void *base, size_t n, size_t size, int (*cmp)(const void *,
 
 #define ldexp   mk_ldexp
 #define qsort   mk_qsort
-#define alloca  __builtin_alloca
+#undef  M_PI
 #define M_PI    3.14159265358979323846264f
 
 #define STB_VORBIS_NO_STDIO

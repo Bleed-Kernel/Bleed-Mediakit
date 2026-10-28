@@ -36,7 +36,8 @@ COMMON_CFLAGS = \
 	-I$(AUDIO_OUT)/include \
 	-Isysroot/include \
 	-Isysroot/include/bleed \
-	-nostdinc
+	-nostdinc \
+	-U__linux__ -U__linux -Ulinux -U__gnu_linux__
 
 SRCS        = $(shell find src -name '*.c' -not -path 'src/vendor/*')
 LIB_OBJS_64 = $(patsubst %.c,$(ELF_OBJ_DIR_64)/%.o,$(SRCS))
